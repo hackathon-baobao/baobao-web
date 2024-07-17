@@ -47,6 +47,9 @@ importers:
       styled-components:
         specifier: ^6.1.11
         version: 6.1.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      styled-reset:
+        specifier: ^4.5.2
+        version: 4.5.2(styled-components@6.1.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       typescript:
         specifier: ^4.9.5
         version: 4.9.5
@@ -4990,6 +4993,12 @@ packages:
     peerDependencies:
       react: '>= 16.8.0'
       react-dom: '>= 16.8.0'
+
+  styled-reset@4.5.2:
+    resolution: {integrity: sha512-dbAaaVEhweBs2FGfqGBdW6oMcMK8238C2X5KCxBhUQJX92m/QyUfzRADOXhdXiXNkIPELtMCd72YY9eCdORfIw==}
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      styled-components: '>=4.0.0 || >=5.0.0 || >=6.0.0'
 
   stylehacks@5.1.1:
     resolution: {integrity: sha512-sBpcd5Hx7G6seo7b1LkpttvTz7ikD0LlH5RmdcBNb6fFR0Fl7LQwHDFr300q4cwUqi+IYrFGmsIHieMBfnN/Bw==}
@@ -11550,6 +11559,10 @@ snapshots:
       shallowequal: 1.1.0
       stylis: 4.3.2
       tslib: 2.6.2
+
+  styled-reset@4.5.2(styled-components@6.1.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1)):
+    dependencies:
+      styled-components: 6.1.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
 
   stylehacks@5.1.1(postcss@8.4.39):
     dependencies:
