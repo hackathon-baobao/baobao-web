@@ -3,6 +3,8 @@ import {showToast} from "src/libs/toast/Swal";
 import {useNavigate, useSearchParams} from "react-router-dom";
 import axios, {AxiosError} from "axios";
 import CONFIG from "src/config/config.json";
+import Token from "src/libs/token/token";
+import {ACCESS_TOKEN_KEY, REFRESH_TOKEN_KEY} from "src/constants/tokens/token.constants";
 
 const UseLogin2 = () => {
     const [searchParams] = useSearchParams();
@@ -19,8 +21,13 @@ const UseLogin2 = () => {
                 setLoading(true);
                 try {
                     const response = await axios.post(`${CONFIG.serverUrl}/login?code=${code}`);
-                    const {accessToken} = response.data;
-                    localStorage.setItem("accessToken", accessToken);
+
+                    console.log(response.data.data);
+
+                    const {accessToken, refreshToken} = response.data.data;
+
+                    Token.setToken(ACCESS_TOKEN_KEY, accessToken);
+                    Token.setToken(REFRESH_TOKEN_KEY, refreshToken)
 
                     showToast("success", "로그인 성공");
                     navigate("/campaign");
@@ -39,21 +46,6 @@ const UseLogin2 = () => {
             handleLogin(code);
         }
     }, []);
-
-    // const getCode = async (code: string) => {
-    //     setLoading(true);
-    //     try {
-    //         const response = await axios.get(`${CONFIG.kakao}`);
-    //         console.log(searchParams.get(response.data.url));
-    //     } catch (error) {
-    //         setLoading(false);
-    //         if (axios.isAxiosError(error)) {
-    //             showToast("error", "통신 오류가 발생했습니다.");
-    //         }
-    //     }
-    // }
-
-
     return {
         loading,
     };
