@@ -1,5 +1,5 @@
 import { Response } from "src/types/until/response.type";
-export interface CampaignType extends Response {
+export interface WriteType extends Response {
     data: {
         title: string,
         description: string,
