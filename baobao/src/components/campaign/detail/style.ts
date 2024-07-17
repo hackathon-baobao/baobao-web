@@ -36,14 +36,16 @@ export const DateValue = styled.span`
 `;
 
 export const DetailInfoContainer = styled.div`
+    background-color: white;
     border-radius: 10px;
     padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 `;
 
 export const DetailLabel = styled.span`
     display: block;
     font-weight: bold;
-    margin-top: 500px;
+    margin-bottom: 10px;
 `;
 
 export const DetailValue = styled.span`
@@ -58,4 +60,52 @@ export const LoadingContainer = styled.div`
     height: 100vh;
     font-size: 24px;
     color: #666;
+`;
+
+export const ButtonContainer = styled.div`
+    margin-top: 20px;
+`;
+
+export const Button = styled.button`
+    padding: 10px 20px;
+    background-color: #7AAA55;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+
+    &:hover {
+        background-color: #679e44;
+    }
+`;
+
+export const ApplicantListContainer = styled.div`
+    margin-top: 20px;
+`;
+
+export const SectionTitle = styled.h3`
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+`;
+
+export const ApplicantItem = styled.div`
+    background-color: #f5f5f5;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+
+    &:first-child {
+        margin-top: 0;
+    }
+`;
+
+export const ApplicantLabel = styled.span`
+    font-weight: bold;
+`;
+
+export const ApplicantValue = styled.span`
+    margin-left: 10px;
 `;
