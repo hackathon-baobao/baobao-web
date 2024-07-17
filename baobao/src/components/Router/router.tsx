@@ -6,6 +6,9 @@ import Login from "src/components/Login/index";
 import Callback from "src/components/Callback";
 import Write from "src/components/campaign/Write";
 import Detail from "src/components/campaign/detail";
+import Tree from "src/components/Tree/Tree";
+import Point from "src/components/Tree/Point";
+import TreeMain from "src/components/Tree/index";
 
 const Router = () => {
     return (
@@ -16,6 +19,9 @@ const Router = () => {
             <Route path="/callback" element={<Callback/>}/>
             <Route path="/campaign/create" element={<Write />} />
             <Route path="/campaign/:id" element={<Detail />} />
+            <Route path="/treetree" element={<Tree />} />
+            <Route path="/Point" element={<Point />} />
+            <Route path="/tree" element={<TreeMain />} />
         </Routes>
     )
 }
