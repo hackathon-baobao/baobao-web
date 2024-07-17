@@ -10,7 +10,7 @@ const Login = () => {
     };
 
     return (
-        <S.LoginButton onClick={handleLogin}>로그인</S.LoginButton>
+        <S.LoginButton onClick={handleLogin}>카카오 로그인</S.LoginButton>
     );
 };
 
