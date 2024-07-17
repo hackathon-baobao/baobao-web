@@ -9,6 +9,7 @@ import Detail from "src/components/campaign/detail";
 import Tree from "src/components/Tree/Tree";
 import Point from "src/components/Tree/Point";
 import TreeMain from "src/components/Tree/index";
+import Rank from "src/components/Tree/Rank";
 
 const Router = () => {
     return (
@@ -22,6 +23,7 @@ const Router = () => {
             <Route path="/treetree" element={<Tree />} />
             <Route path="/Point" element={<Point />} />
             <Route path="/tree" element={<TreeMain />} />
+            <Route path="/rank" element={<Rank />} />
         </Routes>
     )
 }
