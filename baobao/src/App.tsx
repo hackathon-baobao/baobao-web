@@ -1,11 +1,8 @@
 import React from 'react';
+import Provider from "src/components/Common/Provider";
 
 function App() {
-  return (
-    <div className="App">
-
-    </div>
-  );
+  return <Provider/>;
 }
 
 export default App;
