@@ -45,7 +45,7 @@ const Detail = () => {
 
     const handleApply = async () => {
         try {
-            const response = await baobaoAxios.post(`/challenge-applicant?id=${id}`);
+            const response = await baobaoAxios.post(`/challenge-applicant/complete?id=${id}`);
             console.log("신청성공", response);
         } catch (error) {
             console.error("신청실패", error);

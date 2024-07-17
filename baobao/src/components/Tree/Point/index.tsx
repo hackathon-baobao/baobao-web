@@ -9,7 +9,7 @@ const Point = () => {
     useEffect(() => {
         const fetchPoints = async () => {
             try {
-                const response = await fetch(`/api/points?id=${id}`);
+                const response = await fetch(`/challenge-applicant/complete?id=${id}`);
                 const data = await response.json();
                 setPoints(data.points);
             } catch (error) {
@@ -25,7 +25,7 @@ const Point = () => {
             <S.PointCard>
                 <S.PointTitle>포인트</S.PointTitle>
                 <S.PointContainer>
-                    <S.PointValue>현재 당신의 포인트: {points}점</S.PointValue>
+                    <S.PointValue>현재 당신의 포인트: 100{points}점</S.PointValue>
                 </S.PointContainer>
             </S.PointCard>
         </S.PointWrapper>

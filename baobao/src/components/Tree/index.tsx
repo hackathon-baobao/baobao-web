@@ -1,17 +1,40 @@
-import React, { Suspense, useRef } from "react";
-import { Canvas, useLoader } from "@react-three/fiber";
-import { OrbitControls, useGLTF } from '@react-three/drei';
-import "src/assets/scss/common.scss"
+import React from "react";
+import Tree from "src/components/Tree/Tree";
+import Point from "src/components/Tree/Point/index";
+import styled from "styled-components";
 
-const Tree = () => {
-    const { scene } = useGLTF('./model/tree/bigTree.glb');
+const Container = styled.div`
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+`;
+
+const AbsoluteTree = styled(Tree)`
+    position: absolute;
+    top: 20px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 50%; 
+    height: auto; 
+    max-width: 80%; 
+    max-height: 80%; 
+    z-index: 0; 
+`;
+
+const AbsolutePoint = styled(Point)`
+    position: absolute;
+    top: 0;
+    left: 20px; 
+    z-index: 1; 
+`;
+
+const TreeMain = () => {
     return (
-        <Canvas>
-            <ambientLight intensity={1} />
-            <primitive object={scene} position={[0, -3, 0]} scale={[0.4, 0.4, 0.4]} />
-            <OrbitControls />
-        </Canvas>
-    );
-};
+        <Container>
+            <AbsolutePoint />
+            <AbsoluteTree />
+        </Container>
+    )
+}
 
-export default Tree;
+export default TreeMain;
