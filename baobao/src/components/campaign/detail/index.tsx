@@ -87,12 +87,8 @@ const Detail = () => {
                             <S.ApplicantValue>{applicant.name}</S.ApplicantValue>
                         </div>
                         <div>
-                            <S.ApplicantLabel>이메일:</S.ApplicantLabel>
-                            <S.ApplicantValue>{applicant.email}</S.ApplicantValue>
-                        </div>
-                        <div>
                             <S.ApplicantLabel>상태:</S.ApplicantLabel>
-                            <S.ApplicantValue>{applicant.isComplete ? "승인" : "대기중"}</S.ApplicantValue>
+                            <S.ApplicantValue>{applicant.isComplete ? "신청 성공" : "신청 성공"}</S.ApplicantValue>
                         </div>
                     </S.ApplicantItem>
                 ))}
