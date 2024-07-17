@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const HeaderWrap = styled.div`
-    position: relative;
+    position: fixed;
     width: 100vw;
     height: 8vh;
     //background-color: antiquewhite;
