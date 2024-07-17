@@ -4,12 +4,14 @@ import { baobaoAxios } from "src/libs/axios/CustomAxios";
 import { DetailType } from "src/types/detail/detail.type";
 import { ApplicantType } from "src/types/applicant/applicant.type";
 import * as S from "src/components/campaign/detail/style";
+import {showToast} from "src/libs/toast/Swal";
 
 const Detail = () => {
     const { id } = useParams<{ id: string }>();
     const [detail, setDetail] = useState<DetailType | null>(null);
     const [applicants, setApplicants] = useState<ApplicantType[]>([]);
     const [isHost, setIsHost] = useState<boolean>(false);
+    const [selectedApplicantId, setSelectedApplicantId] = useState<string | null>(null);
 
     useEffect(() => {
         const fetchDetailData = async () => {
@@ -46,10 +48,32 @@ const Detail = () => {
     const handleApply = async () => {
         try {
             const response = await baobaoAxios.post(`/challenge-applicant?id=${id}`);
+            showToast("success", "신청 성공");
             console.log("신청성공", response);
         } catch (error) {
             console.error("신청실패", error);
+            showToast("error", "신청 실패");
         }
+    };
+    const handleGivePoints = async (applicantId: string) => {
+        try {
+            const response = await baobaoAxios.patch(`/challenge-applicant/complete?id=${applicantId}`);
+            showToast("success", "포인트 부여 완료");
+            console.log("포인트 부여 성공", response);
+
+            const updatedApplicants = applicants.map(applicant =>
+                applicant.applicantId === applicantId ? { ...applicant, pointsAwarded: true } : applicant
+            );
+            setApplicants(updatedApplicants);
+        } catch (error) {
+            console.error("포인트 부여 실패", error);
+            showToast("error", "포인트 부여 실패");
+        }
+    };
+
+    const handleSelectApplicant = (applicantId: React.Key | null | undefined) => {
+        handleGivePoints(applicantId);
+        setSelectedApplicantId(applicantId);
     };
 
     if (!detail) {
@@ -89,6 +113,9 @@ const Detail = () => {
                         <div>
                             <S.ApplicantLabel>상태:</S.ApplicantLabel>
                             <S.ApplicantValue>{applicant.isComplete ? "신청 성공" : "신청 성공"}</S.ApplicantValue>
+                            <S.Button key={applicant.applicantId} onClick={() => handleSelectApplicant(applicant.applicantId)}>
+                                확인
+                            </S.Button>
                         </div>
                     </S.ApplicantItem>
                 ))}
