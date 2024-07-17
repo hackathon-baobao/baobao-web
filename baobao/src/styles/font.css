@@ -22,3 +22,7 @@
     font-family: 'Pretendard-ExtraBold';
     src: url("src/assets/font/Pretendard-ExtraBold.otf") format("opentype");
 }
+@font-face {
+    font-family: 'Tenada';
+    src: url("src/assets/font/Tenada.ttf") format("opentype");
+}
