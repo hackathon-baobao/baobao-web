@@ -10,6 +10,9 @@
     "@types/node": "^16.18.102",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
+    "axios": "^1.7.2",
+    "fastify": "^4.28.1",
+    "js-cookie": "^3.0.5",
     "pnpm": "^9.5.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -18,6 +21,7 @@
     "scss": "^0.2.4",
     "styled-components": "^6.1.11",
     "styled-reset": "^4.5.2",
+    "sweetalert2": "^11.12.2",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
